@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const app = express();
@@ -18,7 +19,7 @@ app.post('/api/ongkir', async (req, res) => {
             weight: berat,
             courier: kurir
         }, {
-            headers: { 'key': BZmIWKPhc3e66b68e3b745d4scYiYec2 } // <- MASUKKAN API KEY KAMU
+            headers: { 'key': process.env.API_KEY_RAJAONGKIR } // <- MASUKKAN API KEY KAMU
         });
 
         // 3. Ambil hasil dari RajaOngkir, rapikan, kirim ke user kita
